@@ -2,6 +2,12 @@ const c = (el) => document.querySelector(el);
 const cs = (el) => document.querySelectorAll(el);
 const ce = (el) => document.createElement(el);
 
+const modalProdutos = c('.modalProdutos');
+const active = 'active';
+
+let qtCar = 1;
+const qtProduto = c('.qt');
+
 // Requisitando os produtos
 const fetchProdutos = async () => {
   const response = await fetch('js/produtos.json');
@@ -23,13 +29,11 @@ async function showProdutos() {
 
     const img = cloneProduto.querySelector('img');
     const nomeProduto = cloneProduto.querySelector('h3');
-    const tempoEntrega = cloneProduto.querySelector('.tempo--entrega p');
     const precoProduto = cloneProduto.querySelector('.preco--produto p');
 
     img.src = produto.imagem;
     nomeProduto.innerText = produto.nome;
-    tempoEntrega.innerText = `${produto.tempo}`;
-    precoProduto.innerText = `R$ ${produto.preco}`;
+    precoProduto.innerHTML = `${produto.tempo} min - <span>R$ ${produto.preco}</span>`;
 
     boxCard.appendChild(cardProduto);
   });
@@ -38,7 +42,9 @@ async function showProdutos() {
 
 // Função para fechar o modal
 function fecharModal() {
-  c('.modalProdutos').style.display = 'none';
+  modalProdutos.classList.remove(active);
+  qtProduto.innerText = 1;
+  qtCar = 1;
 }
 
 c('.fechar').addEventListener('click', () => fecharModal());
@@ -49,7 +55,8 @@ async function modalItens() {
 
   itens.forEach((item, index) => {
     item.addEventListener('click', () => {
-      c('.modalProdutos').style.display = 'flex';
+      modalProdutos.classList.add(active);
+      c('.box--info').id = index;
 
       const jsonProdutos = produtos[index];
       c('.modal--itens img').src = jsonProdutos.imagem;
@@ -57,9 +64,41 @@ async function modalItens() {
       c('.button-add .preco--itens').innerText = `R$ ${jsonProdutos.preco}`;
     });
   });
+
+  //Fechar modal clicando fora
+  c('.modalProdutos').addEventListener('click', (e) => {
+    if (e.target === modalProdutos) {
+      fecharModal();
+    }
+  });
+}
+
+// Adicionar ao carrinho
+async function addCar() {
+  c('.mais').addEventListener('click', () => {
+    qtCar++;
+    qtProduto.innerText = qtCar;
+  });
+
+  c('.menos').addEventListener('click', () => {
+    if (qtCar > 0) {
+      qtCar--;
+      qtProduto.innerText = qtCar;
+    }
+  });
+
+  // clicar para adicionar
+  const jsonProdutos = await fetchProdutos();
+  const produtos = cs('.card a');
+  produtos.forEach((produto, index) => {
+    produto.addEventListener('click', () => {
+      console.log(jsonProdutos[index]);
+    });
+  });
 }
 
 function init() {
   showProdutos();
+  addCar();
 }
 init();

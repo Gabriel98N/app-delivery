@@ -1,5 +1,4 @@
-[
-  {
+[{
     "id": 0,
     "nome": "Belas artes",
     "imagem": "img/padaria-1.jpg",
@@ -40,5 +39,12 @@
     "imagem": "img/bebida-4.jpg",
     "preco": "32.00",
     "tempo": "110-160"
+  },
+  {
+    "id": 6,
+    "nome": "Pão e Cia",
+    "imagem": "img/padaria-4.jpg",
+    "preco": "22.00",
+    "tempo": "20-35"
   }
 ]

@@ -171,16 +171,20 @@ header nav {
   height: 200px;
 }
 
-.card .tempo--entrega p {
-  color: #9fa0a1;
-  font-size: 0.845em;
-  margin: 5px 0;
+
+.card .preco--produto{
+  margin-top: 5px;
 }
 
-.card .preco--produto p {
-  color: #06c167;
-  font-size: 1em;
+.preco--produto p {
+  font-size: .845em;
   line-height: 1.2;
+  color: #000;
+}
+
+.preco--produto p span{
+  display: inline-block;
+  color: #06c167;
 }
 
 /* Modal Produtos  */
@@ -192,15 +196,29 @@ header nav {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
+  visibility: hidden;
+  opacity: 0;
+  transition: .4s;
+}
+
+.modalProdutos.active{
+  visibility: visible;
+  opacity: 1;
 }
 
 .modal--itens {
   background-color: #fff;
   width: 700px;
   position: relative;
+  transition: .4s;
+  transform: scale(.8);
+}
+
+.modalProdutos.active .modal--itens{
+  transform: scale(1);
 }
 
 .fechar {
@@ -257,7 +275,7 @@ header nav {
 .button--quantidade .menos,
 .button--quantidade .mais {
   border-radius: 50%;
-  padding: 10px;
+  padding: 15px;
   background-color: #f0f0f0;
   cursor: pointer;
 }
