@@ -1,0 +1,273 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+}
+
+img,
+video {
+  max-width: 100%;
+  display: block;
+}
+
+a,
+span,
+label {
+  display: block;
+  text-decoration: none;
+}
+
+body,
+html {
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+.container--wrapper {
+  position: relative;
+  min-height: 100%;
+}
+
+.wrapper {
+  padding-bottom: 100px;
+  background-color: var(--color-1);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+.padding {
+  padding: 0 60px;
+}
+
+/* Header */
+header {
+  background-color: #f7f7f7;
+}
+
+header nav {
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #000;
+  font-size: 1.5em;
+}
+
+.logo span {
+  display: inline-block;
+  color: #06c167;
+}
+
+/* Carrinho */
+.card--carrinho a {
+  color: #fff;
+  background-color: #000;
+  display: flex;
+  align-items: center;
+  padding: 8px 12px;
+  border-radius: 30px;
+}
+
+.card--carrinho a img {
+  width: 20px;
+  height: 20px;
+}
+
+.card--carrinho .count {
+  margin-left: 5px;
+}
+
+.card--carrinho .count span {
+  display: inline-block;
+  font-size: 0.845em;
+  line-height: 1.2;
+}
+
+/* Navegação de opções  */
+.box--options {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 60px;
+  border-bottom: 2px solid #eeeeee;
+}
+
+.box--options .option {
+  width: 84px;
+  text-align: center;
+}
+
+.option + .option {
+  margin-left: 15px;
+}
+
+.option a {
+  color: #000;
+  font-size: 0.845em;
+  line-height: 1.2;
+}
+
+.option .image--option {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 0 auto;
+  transition: 0.2s;
+}
+
+.image--option:hover {
+  background-color: #eeeeee;
+}
+
+/*  Container Intro  */
+.container--intro {
+  /* border: 1px solid red; */
+}
+
+.box--intro {
+  padding: 60px;
+}
+
+.box--intro h2 {
+  font-size: 2.25em;
+  line-height: 44px;
+  margin-bottom: 15px;
+}
+
+.box--card {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px 15px;
+}
+
+.box--card .exemplo--card {
+  /* border: 1px solid blue; */
+  display: none;
+}
+
+.card h3 {
+  font-size: 1.125em;
+  line-height: 1.2;
+  color: #000;
+  margin-top: 15px;
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+}
+
+.card .tempo--entrega p {
+  color: #9fa0a1;
+  font-size: 0.845em;
+  margin: 5px 0;
+}
+
+.card .preco--produto p {
+  color: #06c167;
+  font-size: 1em;
+  line-height: 1.2;
+}
+
+/* Modal Produtos  */
+.modalProdutos {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal--itens {
+  background-color: #fff;
+  width: 700px;
+  position: relative;
+}
+
+.fechar {
+  background: #fff;
+  outline: none;
+  border: 0;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.modal--itens img {
+  width: 100%;
+  height: 350px;
+}
+
+.add--car {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #d7d8da;
+  padding: 20px;
+}
+
+.box--info h3 {
+  font-size: 2.25em;
+  padding: 20px;
+  font-weight: normal;
+}
+
+.box--info .button--quantidade {
+  margin-right: 15px;
+  display: flex;
+}
+
+.button--quantidade span {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 1.125em;
+  font-weight: bold;
+}
+
+.button--quantidade .menos,
+.button--quantidade .mais {
+  border-radius: 50%;
+  padding: 10px;
+  background-color: #f0f0f0;
+  cursor: pointer;
+}
+
+.box--info a {
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  flex: 2;
+}

@@ -1,0 +1,44 @@
+[
+  {
+    "id": 0,
+    "nome": "Belas artes",
+    "imagem": "img/padaria-1.jpg",
+    "preco": "10.00",
+    "tempo": "25-45"
+  },
+  {
+    "id": 1,
+    "nome": "Pizzaria toscana",
+    "imagem": "img/pizza-1.jpg",
+    "preco": "15.00",
+    "tempo": "45-55"
+  },
+  {
+    "id": 2,
+    "nome": "Casa do Vinho",
+    "imagem": "img/bebida-1.jpg",
+    "preco": "30.00",
+    "tempo": "55-70"
+  },
+  {
+    "id": 3,
+    "nome": "Pizzaria piraju",
+    "imagem": "img/pizza-2.jpg",
+    "preco": "45.00",
+    "tempo": "70-90"
+  },
+  {
+    "id": 4,
+    "nome": "Padaria toninho",
+    "imagem": "img/padaria-3.jpg",
+    "preco": "5.00",
+    "tempo": "90-110"
+  },
+  {
+    "id": 5,
+    "nome": "Sucos e Cia",
+    "imagem": "img/bebida-4.jpg",
+    "preco": "32.00",
+    "tempo": "110-160"
+  }
+]
